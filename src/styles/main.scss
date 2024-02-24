@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin propriedades() {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+body {
+    background-color: #eee;
+}
+
+.app {
+    max-width: 1024px;
+    width: 100%;
+    height: 100Vh;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+
+    form {
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+
+        input {
+             @include propriedades();
+        }
+
+        button {
+            @include propriedades();
+            background-color: #82b1ff;
+            color: #fff;
+            margin-left: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #007bff;
+            }
+        }
+    }
+
+    .card {
+        background-color: #82b1ff;
+        max-width: 284px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all ease 0.3s;
+            cursor: pointer;
+        }
+        
+
+        .tabela-temp{
+            display: flex;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        span {
+            font-size: 16px;
+            color:  rgba(0,0,0,0.6);
+            
+            &#cidade {
+                display: block;
+                font-size: 20px;
+                color: rgba(0,0,0,0.8);
+            }
+
+            &#temperatura {
+                font-size: 56px;
+                color:  rgba(0,0,0,0.8);
+                font-weight: bold;
+            }
+
+            &#temp {
+                font-size: 16px;
+                font-weight: bold;
+                color: rgba(0,0,0,0.8);
+            }
+
+            &#icon {
+                display: block;
+            }
+        }
+    }
+}
